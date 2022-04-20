@@ -263,7 +263,8 @@ module.exports = function(app) {
         if (!_.isNil(req.body.email)) user.email = req.body.email;
         if (!_.isNil(req.body.phone)) user.phone = req.body.phone;
         if (req.body.role) user.role = req.body.role;
-        if (typeof(req.body.totpEnabled)=='boolean') user.totpEnabled = req.body.totpEnabled;
+        if (typeof(req.body.totpEnabled) === 'boolean') user.totpEnabled = req.body.totpEnabled;
+        if (typeof(req.body.enabled) === 'boolean') user.enabled = req.body.enabled;
 
         User.updateUser(req.params.id, user)
         .then(msg => Response.Ok(res, msg))
@@ -271,6 +272,7 @@ module.exports = function(app) {
     });
 
     // Delete any user (admin only)
+    /** Removed to keep linked references to user, disable user only for now
     app.delete("/api/users/:id", acl.hasPermission('users:delete'), function(req, res) {
         User.deleteOne({_id: req.params.id})
         .then(msg => {
@@ -281,4 +283,5 @@ module.exports = function(app) {
         })
         .catch(err => Response.Internal(res, err))
     });
+     */
 }

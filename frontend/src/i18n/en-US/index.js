@@ -26,6 +26,10 @@ export default {
         valid: 'Valid',
         new: 'New',
         updates: 'Updates',
+        accountsEnabled: 'Enabled accounts',
+        accountsDisabled: 'Disabled accounts',
+        accountEnabled: 'Account enabled',
+        accountDisabled: 'Account disabled'
     },
     tooltip: {
         usersConnected: 'Users on the Audit:',
@@ -302,6 +306,7 @@ export default {
     resultsPerPage: 'Results per page:',
     createAudit: 'Create Audit',
     name: 'Name',
+    shortName: 'Short name',
     selectAssessment: 'Select Assessment',
     selectLanguage: 'Select Language',
     participants: 'Participants',
